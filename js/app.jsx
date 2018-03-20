@@ -7,6 +7,7 @@ import Menu from './components/menu.jsx';
 import Bio from './components/bio.jsx';
 import Albums from './components/albums.jsx';
 import {StickyContainer, Sticky} from 'react-sticky';
+import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -21,7 +22,9 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleNav(newState) {
       this.setState({display: newState})
     };
-
+    componentWillMount() {
+      configureAnchors({offset: -74, scrollDuration: 800})
+    }
     render() {
       return <div>
       <Nav navDisplay={this.state.display} updateNavDisplay={(newState) => this.toggleNav(newState)}/>
