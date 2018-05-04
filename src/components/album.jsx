@@ -1,7 +1,9 @@
 import React from "react";
 
 export default class Album extends React.Component {
-
+constructor(props){
+  super(props)
+}
   render() {
 
     return <li className="album">
@@ -10,7 +12,7 @@ export default class Album extends React.Component {
       <div className="album__desc">
         <h3 className="album__desc--title">{this.props.title}</h3>
         <a href={this.props.details} title="Idź do strony iTunes" target="_blank">
-          <i className="fab fa-itunes"></i>ZOBACZ</a>
+          <i className="fab fa-itunes"></i>{this.props.langState ? 'CHECK' : 'ZOBACZ'}</a>
       </div>
     </li>
   }
