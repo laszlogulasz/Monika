@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
   render() {
     let note = null;
     note = this.props.langState ? "assets/files/bio-eng.pdf" : "assets/files/bio-pl.pdf";
-    
+
     return <footer>
       <div className="footer--container">
         <ScrollableAnchor id="press">
@@ -42,10 +42,10 @@ export default class Footer extends React.Component {
                 <h3>Management & Booking (Poland)</h3>
                 <p style={{paddingTop: '0.5em', textAlign: 'center', fontSize: '1.5em'}}>AGATA BORZYM</p>
                 <p><span className="icon"><i className="fas fa-mobile-alt fa-2x" aria-hidden="true"></i></span>mobile:
-                  <a href="tel:+48602499111"><span style={{whiteSpace: 'nowrap'}}><strong>+48 602 499 111</strong></span>
+                  <a href="tel:+48602499111" title={this.props.langState ? 'Call Agata' : 'Zadzwoń do Agaty'}><span style={{whiteSpace: 'nowrap'}}><strong>+48 602 499 111</strong></span>
                   </a>
                 </p>
-                <p><span className="icon"><i className="fas fa-at fa-2x" aria-hidden="true"></i></span>MAIL:<a href="mailto:agata@borzym.pl">
+                <p><span className="icon"><i className="fas fa-at fa-2x" aria-hidden="true"></i></span>MAIL:<a href="mailto:agata@borzym.pl" title={this.props.langState ? 'Mail to Agata' : 'Napisz do Agaty'}>
                     <strong>agata@borzym.pl</strong>
                   </a>
                 </p>

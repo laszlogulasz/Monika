@@ -11,7 +11,7 @@ constructor(props){
       <img src={this.props.cover} alt="Album cover"/>
       <div className="album__desc">
         <h3 className="album__desc--title">{this.props.title}</h3>
-        <a href={this.props.details} title="Idź do strony iTunes" target="_blank">
+        <a href={this.props.details} title={this.props.langState ? 'Go to iTunes' : 'Idź do iTunes'} target="_blank">
           <i className="fab fa-itunes"></i>{this.props.langState ? 'CHECK' : 'ZOBACZ'}</a>
       </div>
     </li>

@@ -310,7 +310,7 @@ header {
   position: fixed;
   top: 15px;
   right: 0;
-  z-index: 1000;
+  z-index: 999;
   @include min-device(tablet-v) {
     top: 25px;
   }
@@ -319,25 +319,16 @@ header {
   }
 }
 
-.on {
-  display: block;
-}
-
-.off {
-  display: none;
-}
-
-nav {
+.navi {
   display: block;
   position: fixed;
-  top: 0;
   right: 0;
   color: $typecolor;
   width: 100vw;
   height: 100vh;
   background-color: $darkmenu;
   box-shadow: 0 0 15px $fontshadow;
-  z-index: 999;
+  z-index: 1000;
   @include min-device(smalldesk) {
     width: 680px;
   }
