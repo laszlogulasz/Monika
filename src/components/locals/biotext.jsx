@@ -11,7 +11,7 @@ const biopl = <Fade>
    <p>W marcu 2018 roku odbył się koncert premierowy jej nowego projektu Radioheadycznie zaaranżowanego przez Nikolę Kołodziejczyka, wypełniając dwukrotnie Teatr Syrena. Trwają przygotowania do wydania albumu z tym materiałem.</p>
 </Fade>;
 
-const bioen = <Fade><p>This incredibly charismatic vocalist with an absolutely unique voice has released already four albums, first two recorded in USA and highly appreciated by Polish audience – platinum record for  „Girl Talk” (2011) and for „My Place”(2013).</p>
+const bioen = <Fade><p>This incredibly charismatic vocalist with an absolutely unique voice has released already four albums, first two recorded in USA and highly appreciated by Polish audience – platinum record for  <strong>„Girl Talk”</strong> (2011) and for <strong>„My Place”</strong> (2013).</p>
 <p>She played classical piano before she decided to focus fully on singing. In 2008 she received a full scholarship in University of Miami Frost School of Music and later a scholarship in LA Music Academy, where she studied with Tierney Sutton (8 grammy nominations) and Dorian Holley (Michael Jackson, The Tonight Show).</p>
 <p>Monika’s music career began in 2009 with her performance at the biggest Polish jazz festival – Jazz Jamboree. She appeared on stage at the invitation of violinist and saxophonist Michał Urbaniak, who used to cooperate with Miles. The performance resulted in signing a contract with Sony in 2010.</p>
 <p>Being open to a different musical directions. She appears in many other projects, i.e. featuring on last three albums of a recognized Polish rapper Ten Typ Mes, as well as a composer on varies songs for other Polish singers.</p>

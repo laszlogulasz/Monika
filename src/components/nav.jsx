@@ -20,12 +20,12 @@ export default class Nav extends React.Component {
     this.setState({show: false});
   };
 
-  handleLangSwitch() {
+  handleLangSwitch(e) {
     let enState = null;
     this.state.en ? (enState = false) : (enState = true);
     this.setState({en: enState});
     this.props.updateLang(enState);
-    this.handleMenuClose();
+    if (e) {e.preventDefault()};
   };
 
   render() {
@@ -51,7 +51,7 @@ export default class Nav extends React.Component {
         <button type="button" className="menu__button header__button" style={{display: `${this.state.show ? 'none' : 'block'}`}} onClick={() => this.handleMenuShow()}>MENU</button>
         <Slide force="force" right="right" duration={500} when={this.state.show}>
           <div style={{display: `${this.state.show ? 'block' : 'none'}`}} className="navi">
-            <button type="button" className="menu__button" title={this.state.en ? "Zmień język na polski" : 'Switch language to english'} onClick={() => this.handleLangSwitch()}>{langButton}</button>
+            <button type="button" className="menu__button" title={this.state.en ? "Zmień język na polski" : 'Switch language to english'} onMouseDown={() => this.handleLangSwitch()} onKeyUp={(e) => {if (e.keyCode === 13 || e.keyCode === 32) {this.handleLangSwitch()}}}>{langButton}</button>
             <button type="button" className="button__close" onClick={() => this.handleMenuClose()} aria-label="Close"></button>
             <ul className="menubar__nav">
               {this.state.en ? (menuList = menuEn) : (menuList = menuPl)}

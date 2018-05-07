@@ -47,8 +47,9 @@ a {
   color: $linkcolor;
   text-decoration: none;
 
-  &:hover {
+  &:hover, &:focus, &:active {
     text-decoration: underline;
+    outline: none;
   }
 }
 
@@ -213,17 +214,12 @@ article {
     margin: 0 45px;
   }
 
-  &:hover {
-    outline: 2px solid $linkcolor;
+  &:hover, &:focus, &:active {
+    outline: 3px solid $linkcolor;
     font-weight: 800;
     letter-spacing: 0.09em;
   }
 
-  &:focus {
-    outline: 4px solid $linkcolor;
-    font-weight: 800;
-    letter-spacing: 0.09em;
-  }
 }
 /*--otwarciowe zdięcie i logo--*/
 header {
@@ -371,6 +367,19 @@ header {
         right: 23px;
       }
     }
+    &:hover:after, &:focus:after, &:active:after {
+      content: '';
+      height: 50px;
+      border-left: 7px solid #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      outline: none;
+      top: 0;
+      right: 22px;
+      @include min-device(tablet) {
+        right: 22px;
+      }
+    }
 
     &:before {
       content: '';
@@ -385,8 +394,18 @@ header {
       }
     }
 
-    &:focus {
-      outline: 4px solid $linkcolor;
+    &:hover:before, &:focus:before, &:active:before {
+      content: '';
+      height: 50px;
+      border-left: 7px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      outline: none;
+      top: 0;
+      right: 22px;
+      @include min-device(tablet) {
+        right: 22px;
+      }
     }
   }
 
@@ -425,15 +444,11 @@ header {
         font: 500 2.3em/1.6em "bodoni-urw";
       }
 
-      &:hover {
+      &:hover, &:focus, &:active {
         text-decoration: underline;
         text-decoration-skip: ink;
         text-decoration-skip: edges;
         text-decoration-line: underline;
-      }
-
-      a:focus {
-        outline: 4px solid $linkcolor;
       }
     }
   }
@@ -474,11 +489,12 @@ header {
       }
 
       a {
-        height: 50px;
+        height: 52px;
         display: block;
 
-        &:focus {
-          outline: 4px solid $linkcolor;
+        &:hover, &:focus, &:active {
+          outline: none;
+          border-bottom: 3px solid $linkcolor;
         }
       }
     }
@@ -592,7 +608,7 @@ header {
         margin: 0 auto;
         height: auto;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-end;
         flex-wrap: wrap;
         z-index: 1000;
@@ -653,14 +669,8 @@ header {
               text-shadow: 0 0 15px $fontshadow;
               width: 140px;
 
-              &:hover {
-                outline: 2px solid $linkcolor;
-                font-weight: 800;
-                letter-spacing: 0.09em;
-              }
-
-              &:focus {
-                outline: 4px solid $linkcolor;
+              &:hover, &:focus, &:active {
+                outline: 3px solid $linkcolor;
                 font-weight: 800;
                 letter-spacing: 0.09em;
               }
@@ -709,12 +719,8 @@ header {
         text-decoration: none;
         color: $linkcolor;
 
-        &:hover {
+        &:hover, &:focus, &:active {
           text-decoration: underline;
-        }
-
-        &:focus {
-          outline: 4px solid $linkcolor;
         }
       }
     }
@@ -882,10 +888,6 @@ footer {
       text-shadow: 0 0 15px $fontshadow;
     }
 
-    a:focus {
-      outline: 4px solid $linkcolor;
-    }
-
     .press {
       align-self: flex-start;
       width: 310px;
@@ -899,7 +901,7 @@ footer {
         width: 400px;
       }
 
-      a:hover {
+      a:hover, a:focus, a:active {
         text-decoration: underline;
       }
 
@@ -925,8 +927,10 @@ footer {
           margin: 0 20px 0 40px;
         }
       }
-
-      a:hover {
+      a {
+        letter-spacing: 0.05em;
+      }
+      a:hover, a:focus, a:active {
         text-decoration: underline;
       }
 

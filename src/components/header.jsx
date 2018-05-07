@@ -15,8 +15,8 @@ export default class Header extends React.Component {
 
     return <header id="header">
 
-      <Fade>
-      {this.state.mounted &&  <div className="logo" >
+      <Fade duration={2000}>
+      {this.state.mounted &&  <div className="logo">
           <h1>Monika Brzym - strona oficjalna</h1>
         </div>}
       </Fade>

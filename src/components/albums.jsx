@@ -24,9 +24,15 @@ export default class Albums extends React.Component {
     if (!this.state.albums) {
       return null;
     } else {
-      const list = this.state.albums.results.map((album, index) => {
-        return <Album key={index} date={album.releaseDate.substr(0, 4)} cover={album.artworkUrl100} title={album.collectionName} details={album.collectionViewUrl} langState={this.props.langState}/>
-      });
+      //tworzę listę z fetchowanej tablicy
+      const list = this.state.albums.results
+      //sortuję po dacie wydania (4cyfrowej)
+      .sort((a,b) =>
+      (a.releaseDate.substr(0, 4) > b.releaseDate.substr(0, 4)) ? 1 : ((b.releaseDate.substr(0, 4)) ? -1 : 0))
+      //tworzę albumy z elementów tablicy
+      .map((album, index) =>
+         <Album key={index} date={album.releaseDate.substr(0, 4)} cover={album.artworkUrl100} title={album.collectionName} details={album.collectionViewUrl} langState={this.props.langState}/>
+      );
       let albumstext = this.props.langState ? albumsen : albumspl;
 
       return <ScrollableAnchor id="albums">

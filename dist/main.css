@@ -5,8 +5,9 @@
 a {
   color: white;
   text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+    outline: none; }
 
 h1 {
   visibility: hidden; }
@@ -146,12 +147,8 @@ article {
   @media (min-width: 1024px) and (min-height: 768px) {
     .menu__button {
       margin: 0 45px; } }
-  .menu__button:hover {
-    outline: 2px solid white;
-    font-weight: 800;
-    letter-spacing: 0.09em; }
-  .menu__button:focus {
-    outline: 4px solid white;
+  .menu__button:hover, .menu__button:focus, .menu__button:active {
+    outline: 3px solid white;
     font-weight: 800;
     letter-spacing: 0.09em; }
 
@@ -282,6 +279,18 @@ header {
       @media (min-width: 1024px) and (min-height: 768px) {
         .navi .button__close:after {
           right: 23px; } }
+    .navi .button__close:hover:after, .navi .button__close:focus:after, .navi .button__close:active:after {
+      content: '';
+      height: 50px;
+      border-left: 7px solid #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      outline: none;
+      top: 0;
+      right: 22px; }
+      @media (min-width: 1024px) and (min-height: 768px) {
+        .navi .button__close:hover:after, .navi .button__close:focus:after, .navi .button__close:active:after {
+          right: 22px; } }
     .navi .button__close:before {
       content: '';
       height: 50px;
@@ -293,8 +302,18 @@ header {
       @media (min-width: 1024px) and (min-height: 768px) {
         .navi .button__close:before {
           right: 23px; } }
-    .navi .button__close:focus {
-      outline: 4px solid white; }
+    .navi .button__close:hover:before, .navi .button__close:focus:before, .navi .button__close:active:before {
+      content: '';
+      height: 50px;
+      border-left: 7px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      outline: none;
+      top: 0;
+      right: 22px; }
+      @media (min-width: 1024px) and (min-height: 768px) {
+        .navi .button__close:hover:before, .navi .button__close:focus:before, .navi .button__close:active:before {
+          right: 22px; } }
   .navi ul.menubar__nav {
     padding-top: 20px;
     list-style: none;
@@ -328,13 +347,11 @@ header {
       @media (min-width: 767px) {
         .navi ul.menubar__nav li.menubar__nav--elem {
           font: 500 2.3em/1.6em "bodoni-urw"; } }
-      .navi ul.menubar__nav li.menubar__nav--elem:hover {
+      .navi ul.menubar__nav li.menubar__nav--elem:hover, .navi ul.menubar__nav li.menubar__nav--elem:focus, .navi ul.menubar__nav li.menubar__nav--elem:active {
         text-decoration: underline;
         text-decoration-skip: ink;
         text-decoration-skip: edges;
         text-decoration-line: underline; }
-      .navi ul.menubar__nav li.menubar__nav--elem a:focus {
-        outline: 4px solid white; }
   .navi ul.social__nav {
     padding-top: 30px;
     list-style: none;
@@ -369,10 +386,11 @@ header {
         .navi ul.social__nav li.social__nav--elem {
           padding: 5vh 50px 3vh; } }
       .navi ul.social__nav li.social__nav--elem a {
-        height: 50px;
+        height: 52px;
         display: block; }
-        .navi ul.social__nav li.social__nav--elem a:focus {
-          outline: 4px solid white; }
+        .navi ul.social__nav li.social__nav--elem a:hover, .navi ul.social__nav li.social__nav--elem a:focus, .navi ul.social__nav li.social__nav--elem a:active {
+          outline: none;
+          border-bottom: 3px solid white; }
 
 /* ---- sekcja bio ----*/
 .bio {
@@ -462,7 +480,7 @@ header {
         margin: 0 auto;
         height: auto;
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-end;
         flex-wrap: wrap;
         z-index: 1000; }
@@ -513,12 +531,8 @@ header {
               box-shadow: 0 0 10px rgba(6, 0, 0, 0.4), 0 0 10px rgba(6, 0, 0, 0.4) inset;
               text-shadow: 0 0 15px rgba(6, 0, 0, 0.4);
               width: 140px; }
-              .albums .albums--box article ul li .album__desc a:hover {
-                outline: 2px solid white;
-                font-weight: 800;
-                letter-spacing: 0.09em; }
-              .albums .albums--box article ul li .album__desc a:focus {
-                outline: 4px solid white;
+              .albums .albums--box article ul li .album__desc a:hover, .albums .albums--box article ul li .album__desc a:focus, .albums .albums--box article ul li .album__desc a:active {
+                outline: 3px solid white;
                 font-weight: 800;
                 letter-spacing: 0.09em; }
               .albums .albums--box article ul li .album__desc a svg {
@@ -552,10 +566,8 @@ header {
         font-weight: 500;
         text-decoration: none;
         color: white; }
-        .projects article p a:hover {
+        .projects article p a:hover, .projects article p a:focus, .projects article p a:active {
           text-decoration: underline; }
-        .projects article p a:focus {
-          outline: 4px solid white; }
     .projects article .project-slide {
       padding-top: 15px;
       margin: 0 auto;
@@ -688,8 +700,6 @@ footer {
       -webkit-font-smoothing: antialiased;
       font-smoothing: grayscale;
       text-shadow: 0 0 15px rgba(6, 0, 0, 0.4); }
-    footer .footer--container a:focus {
-      outline: 4px solid white; }
     footer .footer--container .press {
       align-self: flex-start;
       width: 310px;
@@ -702,7 +712,7 @@ footer {
       @media (orientation: landscape) {
         footer .footer--container .press {
           width: 400px; } }
-      footer .footer--container .press a:hover {
+      footer .footer--container .press a:hover, footer .footer--container .press a:focus, footer .footer--container .press a:active {
         text-decoration: underline; }
       footer .footer--container .press a {
         display: block;
@@ -720,7 +730,9 @@ footer {
       @media (min-width: 1024px) and (min-height: 768px) {
         footer .footer--container .contact h2 {
           margin: 0 20px 0 40px; } }
-      footer .footer--container .contact a:hover {
+      footer .footer--container .contact a {
+        letter-spacing: 0.05em; }
+      footer .footer--container .contact a:hover, footer .footer--container .contact a:focus, footer .footer--container .contact a:active {
         text-decoration: underline; }
       footer .footer--container .contact .icon {
         width: 60px;

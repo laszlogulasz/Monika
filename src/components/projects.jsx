@@ -45,11 +45,7 @@ export default class Projects extends React.Component {
           <article className="article--center">
             <Fade right>
               <h2>
-                <span>{
-                    this.props.langState
-                      ? 'Projects'
-                      : 'Projekty'
-                  }</span>
+                <span>{this.props.langState ? 'Projects' : 'Pojekty'}</span>
               </h2>
               <h3>
                 <span>Monika Borzym - Radioheadycznie</span>
