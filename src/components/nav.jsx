@@ -6,55 +6,39 @@ import menu from './lists/navlist.js';
 
 export default class Nav extends React.Component {
   constructor({langState}) {
-    super();
+    super(langState);
     this.state = {
       en: langState,
       show: false
     }
   }
-  handleMenuShow() {
-    this.setState({show: true});
+  handleMenuSwitch() {
+    this.setState(prevState => ({show: !prevState.show}));
   };
 
-  handleMenuClose() {
-    this.setState({show: false});
-  };
-
-  handleLangSwitch(e) {
-    let enState = null;
-    this.state.en ? (enState = false) : (enState = true);
-    this.setState({en: enState});
-    this.props.updateLang(enState);
-    if (e) {e.preventDefault()};
+  handleLangSwitch() {
+    this.setState(prevState => ({en: !prevState.en}));
+    this.state.en ? (this.props.updateLang(false)) : (this.props.updateLang(true));
   };
 
   render() {
-    let langButton,
-      menuList = null;
+    let langButton, menuList = null;
 
-    this.state.en ? (langButton = 'POLSKI') : (langButton = 'ENGLISH');
-
-    const menuEn = menu.map((item, index) => {
-      return <li key={index} className="menubar__nav--elem" onClick={() => this.handleMenuClose()}>
-        <a href={`#${item.id}`}>{item.sectionEn}</a>
-      </li>
-    });
-
-    const menuPl = menu.map((item, index) => {
-      return <li key={index} className="menubar__nav--elem" onClick={() => this.handleMenuClose()}>
-        <a href={`#${item.id}`}>{item.sectionPl}</a>
+    menuList = menu.map((item, index) => {
+      return <li key={index} className="menubar__nav--elem" onClick={() => this.handleMenuSwitch()}>
+        <a href={`#${item.id}`}>{this.state.en ? item.sectionEn : item.sectionPl}</a>
       </li>
     });
 
     return <section className="menu__bar">
       <nav>
-        <button type="button" className="menu__button header__button" style={{display: `${this.state.show ? 'none' : 'block'}`}} onClick={() => this.handleMenuShow()}>MENU</button>
+        <button type="button" className="menu__button header__button" style={{display: `${this.state.show ? 'none' : 'block'}`}} onClick={() => this.handleMenuSwitch()} aria-haspopup="true" aria-expanded={this.state.show} aria-controls="menu" aria-label="Navigation">MENU</button>
         <Slide force="force" right="right" duration={500} when={this.state.show}>
           <div style={{display: `${this.state.show ? 'block' : 'none'}`}} className="navi">
-            <button type="button" className="menu__button" title={this.state.en ? "Zmień język na polski" : 'Switch language to english'} onMouseDown={() => this.handleLangSwitch()} onKeyUp={(e) => {if (e.keyCode === 13 || e.keyCode === 32) {this.handleLangSwitch()}}}>{langButton}</button>
-            <button type="button" className="button__close" onClick={() => this.handleMenuClose()} aria-label="Close"></button>
+            <button type="button" className="menu__button" title={this.state.en ? "Zmień język na polski" : 'Switch language to english'} onClick={() => this.handleLangSwitch()}>{this.state.en ? 'POLSKI' : 'ENGLISH'}</button>
+            <button type="button" className="button__close" onClick={() => this.handleMenuSwitch()} title={this.state.en ? "Zamknij menu" : 'Close menu'} aria-label="Close"></button>
             <ul className="menubar__nav">
-              {this.state.en ? (menuList = menuEn) : (menuList = menuPl)}
+              {menuList}
               <li>
                 <ul className="social__nav">
                   <li className="social__nav--elem">
@@ -84,6 +68,5 @@ export default class Nav extends React.Component {
         </Slide>
       </nav>
     </section>
-
   };
 }

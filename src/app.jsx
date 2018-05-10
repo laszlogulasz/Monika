@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "./style.scss";
 import Nav from './components/nav.jsx';
 import Header from './components/header.jsx';
 import Menu from './components/menu.jsx';
@@ -33,13 +32,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     render() {
-      return <div>
+      return <React.Fragment>
       <Nav langState={this.state.en} updateLang={(enState) => this.toggleLang(enState)}/>
         <Header/>
         <StickyContainer>
           <Sticky>
           {/* dodaję sticky element Menu */}
-          {({style}) => {return <Menu style={style} />}}
+          {({style}) =>  <Menu style={style} />}
           </Sticky>
           <Bio langState={this.state.en}/>
           <Divider/>
@@ -52,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <Videos langState={this.state.en}/>
           <Footer langState={this.state.en}/>
         </StickyContainer>
-      </div>
+      </React.Fragment>
     }
   }
 

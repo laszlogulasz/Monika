@@ -7,7 +7,8 @@ $boxshadow1: rgba(55, 55, 52, 0.8);
 $boxshadow2: rgba(43, 43, 39, 0.8);
 $boxshadow3: rgba(29, 29, 27, 0.8);
 $boxshadow4: hsla(60, 2, 21, 0.83);
-$fontshadow: rgba(6, 0, 0, 0.4); //mixins
+$fontshadow: rgba(6, 0, 0, 0.4);
+//mixins
 /*flex mixin*/
 @mixin flex($justify) {
   display: flex;
