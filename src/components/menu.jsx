@@ -1,16 +1,14 @@
 import React from "react";
-import { goToTop } from 'react-scrollable-anchor'
+import { goToTop, removeHash } from 'react-scrollable-anchor';
 
 export default class Menu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
       activeClass: 'hidden'
     }
-  }
 
   handleGoToTop() {
     goToTop();
+    removeHash()
   }
 
   componentWillReceiveProps(nextProps) {

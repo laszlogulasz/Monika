@@ -1,5 +1,4 @@
 import React from "react";
-import ScrollableAnchor from 'react-scrollable-anchor';
 import makeCarousel from 'react-reveal/makeCarousel';
 import Fade from 'react-reveal/Fade';
 import styled, {css} from 'styled-components';
@@ -7,9 +6,7 @@ import {projectspl, projectsen} from './locals/projectstext.jsx'
 import carouselList from './lists/carousellist.js';
 
 export default class Projects extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
     const Container = styled.div `
   position: relative;
@@ -39,18 +36,17 @@ export default class Projects extends React.Component {
     let projectstext = this.props.langState
       ? projectsen
       : projectspl;
-    return <ScrollableAnchor id="projects">
-      <section className="projects">
+    return <section className="projects" id="projects">
         <div className="container gallery--box">
           <article className="article--center">
             <Fade right>
               <h2>
                 <span>{this.props.langState ? 'Projects' : 'Pojekty'}</span>
               </h2>
-              <h3>
-                <span>Monika Borzym - Radioheadycznie</span>
-              </h3>
             </Fade>
+            <h3>
+              <span>Monika Borzym - Radioheadycznie</span>
+            </h3>
             {projectstext}
             <Carousel defaultWait={2000} maxTurns={20}>
               {pics}
@@ -58,6 +54,5 @@ export default class Projects extends React.Component {
           </article>
         </div>
       </section>
-    </ScrollableAnchor>
   }
 }

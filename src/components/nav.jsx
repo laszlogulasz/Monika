@@ -1,8 +1,6 @@
 import React from "react";
-import ScrollableAnchor, {configureAnchors, removeHash} from 'react-scrollable-anchor';
 import Slide from 'react-reveal/Slide';
 import menu from './lists/navlist.js';
-//import socList from './lists/soclist.jsx';
 
 export default class Nav extends React.Component {
   constructor({langState}) {

@@ -11,34 +11,27 @@ import Gallery from './components/gallery.jsx'
 import Videos from './components/videos.jsx';
 import Footer from './components/footer.jsx';
 import {StickyContainer, Sticky} from 'react-sticky';
-import ScrollableAnchor, { configureAnchors, removeHash } from 'react-scrollable-anchor';
-
-document.addEventListener('DOMContentLoaded', function() {
 
   class App extends React.Component {
     constructor(props) {
-    super(props);
+      super(props);
       this.state = {
         en: false
       };
-     }
-
-     toggleLang(enState) {
-       this.setState({en: enState})
-     };
-
-    componentWillMount() {
-      configureAnchors({offset: -74, scrollDuration: 1500});
     }
+
+    toggleLang(enState) {
+      this.setState({en: enState})
+    };
+
 
     render() {
       return <React.Fragment>
-      <Nav langState={this.state.en} updateLang={(enState) => this.toggleLang(enState)}/>
+        <Nav langState={this.state.en} updateLang={(enState) => this.toggleLang(enState)}/>
         <Header/>
         <StickyContainer>
           <Sticky>
-          {/* dodaję sticky element Menu */}
-          {({style}) =>  <Menu style={style} />}
+            {({style}) => <Menu style={style}/>}
           </Sticky>
           <Bio langState={this.state.en}/>
           <Divider/>
@@ -54,6 +47,6 @@ document.addEventListener('DOMContentLoaded', function() {
       </React.Fragment>
     }
   }
-
+document.addEventListener('DOMContentLoaded', function() {
   ReactDOM.render(<App/>, document.getElementById('app'));
 });

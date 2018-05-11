@@ -5,9 +5,7 @@ import Swiper from 'react-id-swiper';
 import slideList from './lists/slidelist.js';
 
 export default class Gallery extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
 
     const params = {
@@ -28,28 +26,19 @@ export default class Gallery extends React.Component {
       return <div className="slide" alt="zdjęcie portretowe - portrait picture" key={index}><img alt="img" src={`assets/images/${slide.url}`} className="swiper-lazy"/></div>
     });
 
-    return <ScrollableAnchor id="gallery">
-      <section className="gallery">
+    return <section className="gallery" id="gallery">
         <div className="container gallery--box">
           <article className="article--center">
             <Fade right>
               <h2>
-                <span>{
-                    this.props.langState
-                      ? 'Gallery'
-                      : 'Galeria'
-                  }</span>
+                <span>{this.props.langState ? 'Gallery' : 'Galeria'}</span>
               </h2>
             </Fade>
-            <Fade>
-              <Swiper {...params} className="slide">
-                {slides}
-              </Swiper>
-            </Fade>
+            <Swiper {...params} className="slide">
+              {slides}
+            </Swiper>
           </article>
         </div>
       </section>
-    </ScrollableAnchor>
   }
-
 }

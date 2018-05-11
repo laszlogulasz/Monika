@@ -1,19 +1,14 @@
 import React from "react";
-import ScrollableAnchor from 'react-scrollable-anchor';
 import Fade from 'react-reveal/Fade';
 import {biopl, bioen} from './locals/biotext.jsx'
 
 export default class Bio extends React.Component {
-  constructor(props) {
-    super(props)
-  }
 
   render() {
 
     let bioText = this.props.langState ? bioen : biopl;
 
-    return <ScrollableAnchor id="bio">
-      <section className="bio">
+    return <section className="bio" id="bio">
         <div className="container bio--box">
           <article className="article--right">
             <Fade right>
@@ -25,6 +20,5 @@ export default class Bio extends React.Component {
           </article>
         </div>
       </section>
-    </ScrollableAnchor>
   }
 }
