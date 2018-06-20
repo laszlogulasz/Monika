@@ -12,11 +12,7 @@ export default class Menu extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-  if ((nextProps.style.position) == "fixed") {
-    this.setState({ activeClass: 'visible' });
-  } else if ((nextProps.style.position) !== "fixed") {
-    this.setState({ activeClass: 'hidden' });
-  }
+   nextProps.style.position == "fixed" ? this.setState({ activeClass: 'visible' }) : this.setState({ activeClass: 'hidden' });
 }
 
   render() {

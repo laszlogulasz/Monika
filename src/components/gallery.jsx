@@ -9,7 +9,7 @@ export default class Gallery extends React.Component {
   render() {
 
     const params = {
-      slidesPerView: 'auto',
+      lazy: true,
       spaceBetween: 30,
       loop: true,
       pagination: {
@@ -23,7 +23,7 @@ export default class Gallery extends React.Component {
     };
 
     const slides = slideList.map((slide, index) => {
-      return <div className="slide" alt="zdjęcie portretowe - portrait picture" key={index}><img alt="img" src={`assets/images/${slide.url}`} className="swiper-lazy"/></div>
+      return <div key={index}><img alt={this.props.langState ? 'Monika\'s portrait' : 'Portret Moniki'} data-src={`assets/images/${slide.url}`} className="slide swiper-lazy"/><div className="swiper-lazy-preloader swiper-lazy-preloader-white"></div></div>
     });
 
     return <section className="gallery" id="gallery">
@@ -34,7 +34,7 @@ export default class Gallery extends React.Component {
                 <span>{this.props.langState ? 'Gallery' : 'Galeria'}</span>
               </h2>
             </Fade>
-            <Swiper {...params} className="slide">
+            <Swiper {...params}>
               {slides}
             </Swiper>
           </article>

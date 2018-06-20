@@ -1,0 +1,36 @@
+/* ---- sekcja bio ----*/
+.bio {
+  background: linear-gradient($boxshadow1, $boxshadow1),#fff;
+  position: relative;
+  overflow: hidden;
+
+  .bio--box {
+    background: linear-gradient($boxshadow1, $boxshadow1), url("/assets/images/bcgr2.jpg") 50% bottom /180% no-repeat scroll #fff;
+    @media (min-width: 640px) {
+      background-size: contain;
+    }
+    @include min-device(tablet-v) {
+      min-height: 100vh;
+      background-size: contain;
+      background-position-x: 10%;
+    }
+  }
+
+  article {
+    position: absolute;
+    padding-top: 74px;
+    @include min-device(tablet) {
+      align-self: flex-end;
+    }
+
+    a {
+      font-weight: 500;
+      text-decoration: none;
+      color: $typecolor;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

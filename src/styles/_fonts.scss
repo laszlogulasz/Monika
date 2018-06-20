@@ -1,0 +1,85 @@
+/*fonts*/
+a {
+  color: $linkcolor;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    outline: none;
+  }
+}
+
+h1 {
+  visibility: hidden;
+}
+
+h2 {
+  overflow: hidden;
+  padding: 30px 0 50px;
+  text-align: center;
+  color: $typecolor;
+  font: 500 2.3em "bodoni-urw";
+  letter-spacing: 0.03em;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: grayscale;
+  margin: 0 20px;
+  text-shadow: 0 0 10px $fontshadow;
+}
+
+h2:after,
+h2:before {
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  height: 0.07em;
+  position: relative;
+  vertical-align: middle;
+  width: 15%;
+  z-index: 0;
+  box-shadow: 0 0 10px $fontshadow;
+  @supports (-webkit-overflow-scrolling: touch) {
+    vertical-align: top;
+    margin-top: 25px;
+  }
+  @include min-device(tablet-v) {
+    width: 30%;
+  }
+  @include min-device(tablet) {
+    width: 35%;
+  }
+}
+
+h2:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+h2:after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
+h3 {
+  font: 500 1.8em/1em serenity;
+  color: $typecolor;
+  letter-spacing: 0.02em;
+  padding: 0 20px 0 30px;
+  text-shadow: 0 0 15px $fontshadow;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: grayscale;
+}
+
+p {
+  color: $typecolor;
+  font: 300 1.2em/1.1em serenity;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: grayscale;
+  padding: 0 15px 30px;
+  text-shadow: 0 0 15px $fontshadow;
+  @include min-device(tablet) {
+    font: 300 1.3em/1.1em serenity;
+  }
+}

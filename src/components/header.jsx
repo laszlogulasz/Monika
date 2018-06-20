@@ -1,22 +1,14 @@
 import React from "react";
 import Fade from 'react-reveal/Fade';
 export default class Header extends React.Component {
-  state = {
-      mounted: false
-    }
-
-  componentWillMount() {
-    this.setState({mounted: true})
-  }
 
   render() {
-
     return <header id="header">
-      <Fade duration={2000}>
-      {this.state.mounted &&  <div className="logo">
-          <h1>Monika Brzym - strona oficjalna</h1>
-        </div>}
-      </Fade>
+
+        <div className="logo">
+              <h1>Monika Brzym - strona oficjalna</h1>
+            </div>
+      
     </header>
 
   }

@@ -1,0 +1,34 @@
+/*MIXINS*/
+/*flex mixin*/
+@mixin flex($justify) {
+  display: flex;
+  justify-content: $justify;
+}
+/*media queries*/
+@mixin min-device($size) {
+  @if $size == phone {
+    @media (min-width: 375px) {
+      @content;
+    }
+  } @else
+  if $size == phone-h {
+    @media (orientation: landscape) {
+      @content;
+    }
+  } @else
+  if $size == tablet-v {
+    @media (min-width: 767px) {
+      @content;
+    }
+  } @else
+  if $size == smalldesk {
+    @media (max-height: 767px) and (min-width: 960px) {
+      @content;
+    }
+  } @else
+  if $size == tablet {
+    @media (min-width: 1024px) and (min-height: 768px) {
+      @content;
+    }
+  }
+}

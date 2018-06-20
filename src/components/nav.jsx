@@ -31,7 +31,7 @@ export default class Nav extends React.Component {
     return <section className="menu__bar">
       <nav>
         <button type="button" className="menu__button header__button" style={{display: `${this.state.show ? 'none' : 'block'}`}} onClick={() => this.handleMenuSwitch()} aria-haspopup="true" aria-expanded={this.state.show} aria-controls="menu" aria-label="Navigation">MENU</button>
-        <Slide force="force" right="right" duration={500} when={this.state.show}>
+        <Slide force right duration={500} when={this.state.show}>
           <div style={{display: `${this.state.show ? 'block' : 'none'}`}} className="navi">
             <button type="button" className="menu__button" title={this.state.en ? "Zmień język na polski" : 'Switch language to english'} onClick={() => this.handleLangSwitch()}>{this.state.en ? 'POLSKI' : 'ENGLISH'}</button>
             <button type="button" className="button__close" onClick={() => this.handleMenuSwitch()} title={this.state.en ? "Zamknij menu" : 'Close menu'} aria-label="Close"></button>

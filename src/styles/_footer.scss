@@ -1,0 +1,88 @@
+/*--- sekcja footer ---*/
+footer {
+  @include flex(center);
+  background: linear-gradient(hsla(60, 1, 19, 1), hsla(60, 1, 19, 1)), #fff;
+  z-index: 2;
+  flex-grow: 1;
+  box-shadow: inset 0 10px 10px -10px $fontshadow;
+
+  .footer--container {
+    @include flex(center);
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 1060px;
+    flex-grow: 1;
+    @include min-device(tablet) {
+      justify-content: space-between;
+    }
+
+    a,
+    p {
+      font: 300 1.3em serenity;
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: grayscale;
+      text-shadow: 0 0 15px $fontshadow;
+    }
+
+    .press {
+      align-self: flex-start;
+      width: 310px;
+      display: flex;
+      flex-direction: column;
+      padding: 70px 0;
+      @include min-device(phone) {
+        width: 360px;
+      }
+      @include min-device(phone-h) {
+        width: 400px;
+      }
+
+      a:active,
+      a:focus,
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a {
+        display: block;
+        height: 45px;
+        margin-bottom: 30px;
+        padding: 3px 0;
+      }
+    }
+
+    .contact {
+      align-self: flex-start;
+      width: auto;
+      padding: 70px 0;
+      text-align: center;
+      @include min-device(phone-h) {
+        text-align: left;
+      }
+
+      h2 {
+        @include min-device(tablet) {
+          margin: 0 20px 0 40px;
+        }
+      }
+
+      a {
+        letter-spacing: 0.05em;
+      }
+
+      a:active,
+      a:focus,
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .icon {
+        width: 60px;
+        display: inline-block;
+        text-align: center;
+      }
+    }
+  }
+}
