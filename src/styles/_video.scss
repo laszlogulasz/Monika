@@ -1,0 +1,73 @@
+/*--- sekcja video ---*/
+.video {
+  background: linear-gradient($boxshadow4, $boxshadow4), #fff;
+  height: auto;
+  @include min-device(tablet-v) {
+    min-height: 100vh;
+  }
+
+  .video--box {
+    background: linear-gradient($boxshadow4, $boxshadow4), #fff;
+    @include min-device(tablet-v) {
+      background: linear-gradient($boxshadow4, $boxshadow4), url("/assets/images/bacgr4.gif") right bottom/contain no-repeat#fff;
+      background-size: auto;
+    }
+
+    article {
+      max-width: 720px;
+      padding: 70px 0;
+
+      ul {
+        list-style: none;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        z-index: 1000;
+
+        li {
+          display: flex;
+          flex-basis: auto;
+          flex-direction: row;
+          justify-content: center;
+          flex-grow: 1;
+          flex-wrap: wrap;
+          margin: 25px 0;
+          @include min-device(phone-h) {
+            margin: 25px 0 25px 25px;
+          }
+          @include min-device(tablet) {
+            margin: 25px 0 35px 35px;
+          }
+
+          iframe {
+            outline: 1px solid white;
+            box-shadow: 0 0 15px $fontshadow;
+          }
+
+          .video__desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex: 1;
+            margin-top: -5px;
+            min-height: 100px;
+            max-width: 480px;
+
+            & > h3 {
+              padding: 15px 0 0 15px;
+              width: 250px;
+              @include min-device(phone-h) {
+                padding: 15px 0 0 25px;
+              }
+              @include min-device(tablet-v) {
+                padding: 15px 0 0 25px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

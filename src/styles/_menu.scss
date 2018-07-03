@@ -1,0 +1,254 @@
+/* --- pasek menu ---- */
+.menu__bar {
+  @include flex(center);
+  background-color: hsla(60, 1, 16, 1);
+  z-index: 2;
+  flex-grow: 1;
+  box-shadow: 0 0 15px $fontshadow;
+
+  .menu__bar--container {
+    @include flex(space-between);
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+    animation: fadein 2s;
+  }
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .menubar__logo {
+    height: 40px;
+    margin: 8px 0 8px 10px;
+    @include min-device(phone) {
+      margin: 8px 0 8px 20px;
+    }
+    @include min-device(tablet-v) {
+      height: 58px;
+    }
+    @include min-device(tablet) {
+      margin: 8px 0 8px 45px;
+    }
+  }
+}
+/* --- nawigacja ---- */
+.header__button {
+  position: fixed;
+  top: 15px;
+  right: 0;
+  z-index: 999;
+  @include min-device(tablet-v) {
+    top: 25px;
+  }
+  @include min-device(tablet) {
+    margin: 0 45px;
+  }
+}
+
+.navi {
+  display: block;
+  position: fixed;
+  right: 0;
+  color: $typecolor;
+  width: 100vw;
+  height: 100vh;
+  background-color: $darkmenu;
+  box-shadow: 0 0 15px $fontshadow;
+  z-index: 1000;
+  @include min-device(smalldesk) {
+    width: 680px;
+  }
+  @include min-device(tablet) {
+    width: 680px;
+  }
+
+  .menu__button {
+    margin: 25px;
+    @include min-device(tablet) {
+      margin: 25px 45px;
+    }
+  }
+
+  .button__close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      outline: none;
+    }
+
+    &:after {
+      content: '';
+      height: 40px;
+      border-left: 5px solid #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 0;
+      right: 23px;
+      @include min-device(tablet) {
+        right: 23px;
+      }
+    }
+
+    &:active:after,
+    &:focus:after,
+    &:hover:after {
+      content: '';
+      height: 40px;
+      border-left: 6px solid #fff;
+      position: absolute;
+      transform: rotate(45deg);
+      outline: none;
+      top: 0;
+      right: 22px;
+      @include min-device(tablet) {
+        right: 22px;
+      }
+    }
+
+    &:before {
+      content: '';
+      height: 40px;
+      border-left: 5px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      top: 0;
+      right: 23px;
+      @include min-device(tablet) {
+        right: 23px;
+      }
+    }
+
+    &:active:before,
+    &:focus:before,
+    &:hover:before {
+      content: '';
+      height: 40px;
+      border-left: 6px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      outline: none;
+      top: 0;
+      right: 22px;
+      @include min-device(tablet) {
+        right: 22px;
+      }
+    }
+  }
+
+  ul.menubar__nav {
+    padding-top: 20px;
+    list-style: none;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include min-device(phone) {
+      padding-top: 30px;
+    }
+    @include min-device(phone-h) {
+      margin-top: -90px;
+    }
+    @include min-device(tablet-v) {
+      padding-top: 40px;
+      margin-top: 0;
+    }
+
+    li.menubar__nav--elem {
+      font: 500 1.8em/1.3em "bodoni-urw";
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: grayscale;
+      @include min-device(phone) {
+        font: 500 2em "bodoni-urw";
+      }
+      @include min-device(phone-h) {
+        font: 500 1.8em/1.2em "bodoni-urw";
+      }
+      @include min-device(tablet-v) {
+        font: 500 2.3em/1.6em "bodoni-urw";
+      }
+
+      &:active,
+      &:focus,
+      &:hover {
+        text-decoration: underline;
+        text-decoration-skip: ink;
+        text-decoration-skip: edges;
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  ul.social__nav {
+    padding-top: 30px;
+    list-style: none;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    @include min-device(phone-h) {
+      padding: 0 10px;
+    }
+    @include min-device(smalldesk) {
+      padding: 0 20px;
+    }
+    @include min-device(tablet) {
+      padding: 30px 140px;
+    }
+
+    li.social__nav--elem {
+      cursor: pointer;
+      padding: 10px 15px;
+      @include min-device(phone) {
+        padding: 30px 20px;
+      }
+      @include min-device(phone-h) {
+        padding: 10px 20px;
+      }
+      @include min-device(smalldesk) {
+        padding: 0 20px;
+      }
+      @include min-device(tablet-v) {
+        padding: 5vh 50px 3vh;
+      }
+
+      a {
+        height: 52px;
+        display: block;
+
+        &:active,
+        &:focus,
+        &:hover {
+          outline: none;
+          border-bottom: 3px solid $linkcolor;
+        }
+      }
+    }
+  }
+}
