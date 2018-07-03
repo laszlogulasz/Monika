@@ -1,3 +1,3 @@
-import App from "./app.jsx";
+import App from "./App";
 import style from "./style.scss";
 import swiper from "./swiper.scss";

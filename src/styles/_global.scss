@@ -6,7 +6,7 @@ body {
   height: 100%;
 }
 
-section {
+section, aside {
   @include flex(center);
 }
 
@@ -59,7 +59,6 @@ article {
   font: 500 1.1em serenity;
   letter-spacing: 0.1em;
   margin: 0 25px;
-  text-align: left;
   padding: 0 10px;
   -webkit-font-smoothing: antialiased;
   font-smoothing: grayscale;
@@ -77,7 +76,7 @@ article {
   &:active,
   &:focus,
   &:hover {
-    outline: 3px solid $linkcolor;
+    outline: 2px solid $linkcolor;
     font-weight: 800;
     letter-spacing: 0.09em;
   }

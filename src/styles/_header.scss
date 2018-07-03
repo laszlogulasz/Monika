@@ -13,12 +13,10 @@ header {
     top: 0;
     left: 0;
     background: url("/assets/images/bcgr.jpg") 55% 0/cover no-repeat;
-    // @include min-device(smalldesk) {
-    //   background-position-y: -50px;
-    // }
     will-change: transform;
     z-index: -1;
   }
+
   &::after {
     content: '';
     position: fixed;
@@ -42,11 +40,64 @@ header {
     will-change: transform;
   z-index: -1;
   }
+  .cookies__bar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+      background-color: hsla(60, 1, 6, 1);
+      z-index: 2;
+      box-shadow: 0 0 15px $fontshadow;
 
-  // .logo {
-  //   height: 100vh;
-  //   overflow: hidden;
-  //   position: relative;
-  //
-  // }
+      .cookies__info {
+        @include flex(space-between);
+        align-items: center;
+        max-width: 1060px;
+        flex-direction: row;
+
+
+      }
+      p {
+        padding: 15px 60px 15px 15px;
+      }
+      .button__close {
+        position: relative;
+        right: 25px;
+        bottom: 0;
+        color: white;
+        width: 25px;
+        height: 25px;
+        outline: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          outline: none;
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+
+        &:after, &:before {
+          content: '';
+          height: 25px;
+          border-left: 3px solid #fff;
+          position: absolute;
+          top: 0;
+        }
+
+        &:active:before,
+        &:focus:before,
+        &:hover:before,
+        &:active:after,
+        &:focus:after,
+        &:hover:after {
+          border-left: 4px solid #fff;
+          outline: none;
+        }
+      }
+  }
 }

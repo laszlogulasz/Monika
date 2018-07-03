@@ -87,8 +87,8 @@
     right: 25px;
     top: 20px;
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     outline: none;
     background: none;
     border: none;
@@ -100,7 +100,7 @@
 
     &:after {
       content: '';
-      height: 50px;
+      height: 40px;
       border-left: 5px solid #fff;
       position: absolute;
       transform: rotate(45deg);
@@ -115,8 +115,8 @@
     &:focus:after,
     &:hover:after {
       content: '';
-      height: 50px;
-      border-left: 7px solid #fff;
+      height: 40px;
+      border-left: 6px solid #fff;
       position: absolute;
       transform: rotate(45deg);
       outline: none;
@@ -129,7 +129,7 @@
 
     &:before {
       content: '';
-      height: 50px;
+      height: 40px;
       border-left: 5px solid #fff;
       position: absolute;
       transform: rotate(-45deg);
@@ -144,8 +144,8 @@
     &:focus:before,
     &:hover:before {
       content: '';
-      height: 50px;
-      border-left: 7px solid #fff;
+      height: 40px;
+      border-left: 6px solid #fff;
       position: absolute;
       transform: rotate(-45deg);
       outline: none;
