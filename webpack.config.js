@@ -1,9 +1,8 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 var CompressionPlugin = require("compression-webpack-plugin");
-var webpack = require('webpack');
-
+var webpack = require("webpack");
 
 module.exports = {
   module: {
@@ -13,7 +12,20 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: { presets: ["env", "react", "stage-2"] }
+          options: {
+            presets: [
+              [
+                "env",
+                {
+                  targets: {
+                    node: "8.10"
+                  }
+                }
+              ],
+              "react",
+              "stage-2"
+            ]
+          }
         }
       },
       {
@@ -28,8 +40,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
-        }
-
+      }
     ]
   },
   plugins: [
@@ -42,8 +53,8 @@ module.exports = {
       chunkFilename: "[id].css"
     }),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
       }
     }),
 
@@ -54,8 +65,7 @@ module.exports = {
       test: /\.js$|\.css$|\.html$/,
       threshold: 10240,
       minRatio: 0.8
-    }),
+    })
     //new BundleAnalyzerPlugin()
-
   ]
 };

@@ -26,6 +26,11 @@
       @content;
     }
   } @else
+  if $size == desk {
+    @media (min-height: 767px) and (min-width: 960px) {
+      @content;
+    }
+  } @else
   if $size == tablet {
     @media (min-width: 1024px) and (min-height: 768px) {
       @content;

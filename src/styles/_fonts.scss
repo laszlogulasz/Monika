@@ -77,9 +77,12 @@ p, figure {
   letter-spacing: 0.02em;
   -webkit-font-smoothing: antialiased;
   font-smoothing: grayscale;
-  padding: 0 15px 30px;
+  padding: 0 10px 30px 10px;
+  @include min-device(phone) {
+      padding: 0 15px 30px;
+    }
   text-shadow: 0 0 15px $fontshadow;
-  @include min-device(tablet) {
+  @include min-device(desk) {
     font: 300 1.3em/1.1em serenity;
   }
 }

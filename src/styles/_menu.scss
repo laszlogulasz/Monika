@@ -76,7 +76,10 @@
   }
 
   .menu__button {
-    margin: 25px;
+    margin: 25px 20px;
+    @include min-device(phone) {
+      margin: 25px;
+    }
     @include min-device(tablet) {
       margin: 25px 45px;
     }

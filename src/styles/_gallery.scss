@@ -1,13 +1,14 @@
 /*--- sekcja gallery ---*/
 .gallery {
   background: linear-gradient($boxshadow3, $boxshadow3), #fff;
-  min-height: 100vh;
+  min-height: auto;
 
   .gallery--box {
     article {
       margin: 0;
       width: 300px;
       max-width: 800px;
+      padding: 70px 0;
       @include min-device(phone) {
         width: 340px;
       }

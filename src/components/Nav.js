@@ -57,7 +57,7 @@ export default class Nav extends React.Component {
               aria-haspopup="true"
               aria-expanded={this.state.show}
               aria-controls="menu"
-              aria-label="Navigation">
+              aria-label="menu">
                 MENU
             </button>
             <Slide force right duration={500} when={this.state.show}>
@@ -77,7 +77,7 @@ export default class Nav extends React.Component {
                   className="button__close"
                   onClick={() => this.handleMenuSwitch()}
                   title={this.state.en ? 'Close menu' : 'Zamknij menu'}
-                  aria-label="Close">
+                  aria-label={this.state.en ? 'Close menu' : 'Zamknij menu'}>
                 </button>
                 <ul className="menubar__nav">
                   {navList}

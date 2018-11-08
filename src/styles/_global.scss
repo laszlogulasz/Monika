@@ -58,7 +58,10 @@ article {
   border: none;
   font: 500 1.1em serenity;
   letter-spacing: 0.1em;
-  margin: 0 25px;
+  margin: 0 15px;
+  @include min-device(phone) {
+      margin: 0 25px;
+    }
   padding: 0 10px;
   -webkit-font-smoothing: antialiased;
   font-smoothing: grayscale;
