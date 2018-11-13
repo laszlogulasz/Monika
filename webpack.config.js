@@ -1,33 +1,20 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var CompressionPlugin = require("compression-webpack-plugin");
-var webpack = require("webpack");
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CompressionPlugin = require("compression-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              [
-                "env",
-                {
-                  targets: {
-                    node: "8.10"
-                  }
-                }
-              ],
-              "react",
-              "stage-2"
-            ]
-          }
-        }
-      },
+      test: /\.(js|jsx)$/,
+      exclude: /node_modules/,
+      use: {
+        loader: "babel-loader",
+        options: { babelrcRoots: ['.', './'] }
+      }
+    },
       {
         test: /\.html$/,
         use: [

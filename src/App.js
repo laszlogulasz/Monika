@@ -7,7 +7,7 @@ import Bio from "./components/Bio";
 import Albums from "./components/Albums";
 import Projects from "./components/Projects";
 import Gallery from "./components/Gallery";
-import Videos from "./components/Videos.js";
+import Videos from "./components/Videos";
 import Footer from "./components/Footer";
 import { StickyContainer, Sticky } from "react-sticky";
 import { CookiesProvider } from "react-cookie";

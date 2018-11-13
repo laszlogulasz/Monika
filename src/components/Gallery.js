@@ -1,34 +1,16 @@
 import React from "react";
 import ScrollableAnchor from "react-scrollable-anchor";
 import Fade from "react-reveal/Fade";
-import Swiper from "react-id-swiper";
+import Loadable from "react-loadable";
 import Divider from "./Divider";
-import slideList from "./lists/slidelist";
+import Loading from "./Loading";
 
-const Gallery = ({ ...props }) => {
-  const params = {
-    lazy: true,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next.swiper-button-white",
-      prevEl: ".swiper-button-prev.swiper-button-white"
-    }
-  };
+const LazySwiper = Loadable({
+  loader: () => import("./Slider"),
+  loading: Loading
+})
 
-  const slides = slideList.map((slide, index) => {
-    return (
-      <div key={index}>
-        <img
-          data-src={`assets/images/${slide.url}`}
-          className="slide swiper-lazy"
-          role="presentation"
-        />
-        <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
-      </div>
-    );
-  });
-
+const Gallery = (props) => {
   return (
     <React.Fragment>
       <ScrollableAnchor id="gallery">
@@ -40,7 +22,7 @@ const Gallery = ({ ...props }) => {
                   <span>{props.langState ? "Gallery" : "Galeria"}</span>
                 </h2>
               </Fade>
-              <Swiper {...params}>{slides}</Swiper>
+              <LazySwiper />
             </article>
           </div>
         </section>
