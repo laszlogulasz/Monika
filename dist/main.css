@@ -628,13 +628,13 @@ article {
         transition: outline 0.1s;
         box-shadow: 0 0 10px rgba(6, 0, 0, 0.4), 0 0 10px rgba(6, 0, 0, 0.4) inset;
         text-shadow: 0 0 15px rgba(6, 0, 0, 0.4);
-        width: 115px; }
+        width: 135px; }
         .projects__article__title a:active, .projects__article__title a:focus, .projects__article__title a:hover {
           outline: 2px solid white;
           font-weight: 800;
           letter-spacing: 0.09em; }
         .projects__article__title a svg {
-          margin: 8px 12px 0 10px;
+          margin: 5px 12px 0 10px;
           -webkit-filter: drop-shadow(0 0 15px 0 rgba(6, 0, 0, 0.4));
           filter: drop-shadow(0 0 15px 0 rgba(6, 0, 0, 0.4)); }
     .projects__article__figure {
@@ -645,7 +645,6 @@ article {
         .projects__article__figure {
           flex-direction: row; } }
       .projects__article__figure img {
-        flex: 1;
         box-shadow: 0 0 10px rgba(6, 0, 0, 0.4);
         width: 300px;
         height: 270px;

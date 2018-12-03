@@ -26,21 +26,21 @@ const Projects = props => {
                   RADIO-HEDONISTYCZNIE
                 </h3>
                 <a
-                  href={
-                    "https://www.mystic.pl/plyty_cd,32445.htm?fbclid=IwAR2ECj2sOYkxSWbCI1xIEty5ZK_O8SbpiK4PT81cEHTyyvZXnwnHtae8vrU"
-                  }
-                  title={props.langState ? "Go to sklepu" : "Idź do sklepu"}
+                  href="https://itunes.apple.com/us/album/radiohedonistycznie/1442076750?uo=4"
+                  title={props.langState ? "Go to iTunes" : "Idź do iTunes"}
                   target="_blank"
                   rel="noopener"
                 >
-                  <i className="fas fa-store fa-xs" />
-                  {props.langState ? "STORE" : "SKLEP"}
+                  <i className="fab fa-itunes" />
+                  {props.langState ? "CHECK" : "ZOBACZ"}
                 </a>
               </div>
               <figure className="projects__article__figure">
                 <img
+                  width="300"
                   alt="RADIO-HEDONISTYCZNIE album cover"
-                  src={`assets/images/coverradiohead.jpg`}
+                  src="assets/images/coverradiohead.jpg"
+                  srcSet="assets/images/coverradiohead@2x.jpg 2x"
                 />
                 <figcaption className="projects__article__figure__caption">
                   {projectstext}

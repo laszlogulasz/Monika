@@ -2,7 +2,7 @@ import React from "react";
 import Swiper from "react-id-swiper";
 import slideList from "./lists/slidelist";
 
-const Slider = (props) => {
+const Slider = props => {
   const params = {
     lazy: true,
     spaceBetween: 30,
@@ -24,10 +24,8 @@ const Slider = (props) => {
       </div>
     );
   });
-  
-  return (
-    <Swiper {...params}>{slides}</Swiper>
-  )
-}
+
+  return <Swiper {...params}>{slides}</Swiper>;
+};
 
 export default Slider;
